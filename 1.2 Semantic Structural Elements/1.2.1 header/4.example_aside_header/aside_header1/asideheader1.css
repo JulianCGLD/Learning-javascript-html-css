@@ -1,0 +1,14 @@
+.sidebar {
+  padding: 1rem;
+  border-left: 1px solid #ccc;
+}
+
+.sidebar-header {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}

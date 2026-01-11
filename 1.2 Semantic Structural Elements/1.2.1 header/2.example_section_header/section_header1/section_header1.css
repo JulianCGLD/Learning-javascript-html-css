@@ -1,0 +1,21 @@
+.feature-section {
+padding: 2rem;
+background-color: #f9f9f9;
+}
+
+.feature-header {
+margin-bottom: 1.25rem;
+}
+
+.feature-title {
+margin: 0;
+font-size: 1.5rem;
+line-height: 1.2;
+}
+
+.feature-description {
+margin-top: 0.5rem;
+margin-bottom: 0;
+font-size: 1rem;
+color: #666;
+}

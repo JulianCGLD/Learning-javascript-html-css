@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3 Basic Selectors Demo</title>
+    <!-- Linking the CSS file -->
+    <link rel="stylesheet" href="selectors.css">
+    <style>
+        /* Small internal style just to layout the sections clearly */
+        section {
+            margin-bottom: 40px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+        }
+        .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="unique-header">
+        <h1>2.3 Basic Selectors Demo</h1>
+        <p>This element is styled using an ID selector <code>#unique-header</code> (2.3.4)</p>
+    </header>
+
+    <!-- 2.3.1 Universal Selector -->
+    <section>
+        <span class="label">2.3.1 Universal Selector (*)</span>
+        <p>The universal selector <code>*</code> in the CSS file has set <code>box-sizing: border-box</code> for every element on this page (including this paragraph).</p>
+    </section>
+
+    <!-- 2.3.2 Type Selector -->
+    <section>
+        <span class="label">2.3.2 Type Selector (element)</span>
+        <h2>This is an H2 element</h2>
+        <p>This paragraph tag <code>&lt;p&gt;</code> and the heading <code>&lt;h2&gt;</code> above are styled using <strong>Type Selectors</strong>. All <code>p</code> tags get the same gray color.</p>
+    </section>
+
+    <!-- 2.3.3 Class Selector -->
+    <section>
+        <span class="label">2.3.3 Class Selector (.class)</span>
+        <div class="highlight-box">
+            This div has the class <code>.highlight-box</code>.
+            <br>
+            <span class="text-accent">This span has the class <code>.text-accent</code>.</span>
+        </div>
+        <div class="highlight-box">
+            Classes are reusable! This is another <code>.highlight-box</code>.
+        </div>
+    </section>
+
+    <!-- 2.3.5 Attribute Selector -->
+    <section>
+        <span class="label">2.3.5 Attribute Selector [attr]</span>
+        
+        <label for="name">Name (input[type="text"]):</label>
+        <input type="text" id="name" placeholder="I have a yellow background">
+
+        <br>
+        <label for="pass">Password (no match):</label>
+        <input type="password" id="pass" placeholder="Normal background">
+
+        <br><br>
+        <p title="I have a title attribute">
+            Hover over me! I have a <code>[title]</code> attribute, so I get a dotted underline and a help cursor.
+        </p>
+    </section>
+
+    <!-- 2.3.6 Group Selector -->
+    <section>
+        <span class="label">2.3.6 Group Selector (,)</span>
+        <p>The following elements are different tags but share styles via a Group Selector:</p>
+        
+        <h3>I am an H3</h3>
+        <h4>I am an H4</h4>
+        <span class="grouped-item">I am a span with .grouped-item</span>
+    </section>
+
+</body>
+</html>

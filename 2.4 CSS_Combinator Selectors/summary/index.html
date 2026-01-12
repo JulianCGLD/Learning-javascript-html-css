@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4 Combinators: With vs Without</title>
+    <link rel="stylesheet" href="combinators.css">
+</head>
+<body>
+
+    <h1>2.4 Combinator Selectors: With vs. Without</h1>
+    <p>Left column shows the base HTML. Right column shows the applied Selector logic.</p>
+
+    <!-- 2.4.1 Descendant -->
+    <h2>2.4.1 Descendant Selector (space)</h2>
+    <p>Target: <code>.parent span</code> (Selects ALL nested spans)</p>
+    <div class="comparison-wrapper">
+        <!-- WITHOUT -->
+        <div class="col">
+            <h3>Without Logic</h3>
+            <div class="demo-box">
+                <span>Direct Child</span><br><br>
+                <div style="border:1px dashed #999; padding:5px;">
+                    <small>Grandparent Div</small><br>
+                    <span>Grandchild (Nested)</span>
+                </div>
+            </div>
+            <small>No special styling applied.</small>
+        </div>
+
+        <!-- WITH -->
+        <div class="col">
+            <h3>With Logic</h3>
+            <!-- The class "with-descendant" activates the CSS rules -->
+            <div class="demo-box with-descendant">
+                <span>Direct Child</span><br><br>
+                <div style="border:1px dashed #999; padding:5px;">
+                    <small>Grandparent Div</small><br>
+                    <span>Grandchild (Nested)</span>
+                </div>
+            </div>
+            <small>Result: Both direct and nested spans turn <strong>Red</strong>.</small>
+        </div>
+    </div>
+
+
+    <!-- 2.4.2 Child -->
+    <h2>2.4.2 Child Selector (>)</h2>
+    <p>Target: <code>.parent > span</code> (Selects ONLY direct children)</p>
+    <div class="comparison-wrapper">
+        <!-- WITHOUT -->
+        <div class="col">
+            <h3>Without Logic</h3>
+            <div class="demo-box">
+                <span>Direct Child</span><br><br>
+                <div style="border:1px dashed #999; padding:5px;">
+                    <small>Grandparent Div</small><br>
+                    <span>Grandchild (Nested)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- WITH -->
+        <div class="col">
+            <h3>With Logic</h3>
+            <div class="demo-box with-child">
+                <span>Direct Child</span><br><br>
+                <div style="border:1px dashed #999; padding:5px;">
+                    <small>Grandparent Div</small><br>
+                    <span>Grandchild (Nested)</span>
+                </div>
+            </div>
+            <small>Result: Only the direct child turns <strong>Blue</strong>. The nested one is ignored.</small>
+        </div>
+    </div>
+
+
+    <!-- 2.4.3 Adjacent Sibling -->
+    <h2>2.4.3 Adjacent Sibling Selector (+)</h2>
+    <p>Target: <code>.trigger + li</code> (Selects only the ONE item immediately after)</p>
+    <div class="comparison-wrapper">
+        <!-- WITHOUT -->
+        <div class="col">
+            <h3>Without Logic</h3>
+            <ul>
+                <li>Item 1</li>
+                <li class="trigger">Item 2 (Trigger)</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+
+        <!-- WITH -->
+        <div class="col">
+            <h3>With Logic</h3>
+            <div class="with-adjacent">
+                <ul>
+                    <li>Item 1</li>
+                    <li class="trigger">Item 2 (Trigger)</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+            <small>Result: Only Item 3 turns <strong>Orange</strong>.</small>
+        </div>
+    </div>
+
+
+    <!-- 2.4.3 General Sibling -->
+    <h2>2.4.4 General Sibling Selector (~)</h2>
+    <p>Target: <code>.trigger ~ li</code> (Selects ALL items after)</p>
+    <div class="comparison-wrapper">
+        <!-- WITHOUT -->
+        <div class="col">
+            <h3>Without Logic</h3>
+            <ul>
+                <li>Item 1</li>
+                <li class="trigger">Item 2 (Trigger)</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+
+        <!-- WITH -->
+        <div class="col">
+            <h3>With Logic</h3>
+            <div class="with-general">
+                <ul>
+                    <li>Item 1</li>
+                    <li class="trigger">Item 2 (Trigger)</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+            <small>Result: Items 3 AND 4 turn <strong>Green</strong>.</small>
+        </div>
+    </div>
+
+</body>
+</html>

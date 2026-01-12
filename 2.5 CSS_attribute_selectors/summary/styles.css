@@ -1,0 +1,140 @@
+/* styles.css */
+/* Base Layout Styles (Do not affect logic demonstration) */
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+section {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.panel-container {
+    display: flex;
+    gap: 20px;
+}
+
+.panel {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    background: #fafafa;
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Canonical Structure Styles (Base appearance) */
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: white;
+    max-width: 300px;
+    border-radius: 6px;
+}
+.card-title {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.2em;
+    text-transform: none; /* Reset h3 uppercase generic style */
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.link {
+    text-decoration: none;
+    padding: 8px;
+    background: #eee;
+    color: #333;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: block;
+    text-align: center;
+}
+footer {
+    font-size: 0.8em;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+}
+
+/* 2.5.1 [attr] - Has attribute */
+/* EXPLANATION: [target] looks for the HTML ATTRIBUTE named 'target'. 
+   Square brackets [] mean "Attribute Selector". 
+   It finds any tag that has target="..." regardless of what is inside. 
+   It is NOT an ID (which uses #) or a Class (which uses .). */
+#topic-2-5-1 .with-logic [target] {
+    background-color: #ffcccc; /* Light red highlight */
+    border: 2px solid red;
+    font-weight: bold;
+}
+
+/* 2.5.2 [attr="value"] - Exact match */
+/* Selects elements where 'target' is exactly '_blank' */
+#topic-2-5-2 .with-logic [target="_blank"] {
+    background-color: #ccffcc; /* Light green highlight */
+    border: 2px solid green;
+}
+
+/* 2.5.3 [attr~="value"] - Contains word */
+/* Selects elements where 'data-tags' contains the space-separated word 'featured' */
+#topic-2-5-3 .with-logic [data-tags~="featured"] {
+    border: 3px solid #007bff; /* Blue border around the whole card */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* 2.5.4 [attr|="value"] - Starts with value (hyphenated) */
+/* Selects elements where 'lang' is 'en' or starts with 'en-' */
+#topic-2-5-4 .with-logic [lang|="en"] {
+    border-left: 5px solid orange; /* Orange left accent */
+}
+
+/* 2.5.5 [attr^="value"] - Begins with */
+/* Selects elements where 'href' string starts with 'https' */
+#topic-2-5-5 .with-logic [href^="https"] {
+    background-color: #e0f7fa; /* Cyan background */
+    color: #006064;
+}
+
+/* 2.5.6 [attr$="value"] - Ends with */
+/* Selects elements where 'href' string ends with '.jpg' */
+#topic-2-5-6 .with-logic [href$=".jpg"] {
+    background-color: #fff3e0; /* Orange background */
+    border: 2px dashed orange;
+}
+
+/* 2.5.7 [attr*="value"] - Contains substring */
+/* Selects elements where 'data-status' contains the substring 'active' anywhere */
+#topic-2-5-7 .with-logic [data-status*="active"] {
+    color: #2e7d32; /* Green text */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 2.5.8 [attr="value" i] - Case-insensitive */
+/* Selects 'title' matching 'main header' regardless of case (HTML has 'Main Header') */
+#topic-2-5-8 .with-logic [title="main header" i] {
+    background-color: #f3e5f5; /* Purple background */
+    text-decoration: underline;
+    text-decoration-color: purple;
+}

@@ -1,0 +1,79 @@
+/* 2.3.1 Universal selector (*) - Selects all elements */
+* {
+    /* Helps visualization: sets box-sizing for everything */
+    box-sizing: border-box;
+    /* Often used for resets, be careful with performance on large pages */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+/* 2.3.2 Type selector (element) - Selects by tag name */
+h2 {
+    color: #2d3436;
+    border-bottom: 2px solid #dfe6e9;
+    padding-bottom: 5px;
+}
+
+p {
+    color: #636e72;
+    line-height: 1.5;
+}
+
+/* 2.3.3 Class selector (.class) - Selects by class */
+.highlight-box {
+    background-color: #fff;
+    border: 1px solid #0984e3;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.text-accent {
+    color: #d63031; /* Red text */
+    font-weight: bold;
+}
+
+/* 2.3.4 ID selector (#id) - Selects by ID */
+#unique-header {
+    background-color: #00b894;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 2.3.5 Attribute selector [attr] - Selects by attribute */
+/* Selects any input with type="text" */
+input[type="text"] {
+    background-color: #ffeaa7;
+    border: 1px solid #fdcb6e;
+    padding: 8px;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+/* Selects elements with a title attribute */
+[title] {
+    cursor: help; /* Changes cursor to question mark */
+    border-bottom: 1px dotted #b2bec3;
+}
+
+/* 2.3.6 Group selector (,) - Multiple selectors */
+/* Applies the same style to h3, h4, and .grouped-item */
+h3, h4, .grouped-item {
+    color: #6c5ce7;
+    background-color: #dfe6e9;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 10px;
+}

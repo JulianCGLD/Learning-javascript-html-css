@@ -1,0 +1,273 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5 Attribute Selectors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 
+    GLOBAL CANONICAL STRUCTURE 
+    A generic card component used verbatim in all examples below.
+    structure:
+    <article class="card" lang="en-US" data-tags="featured secure-item">
+        <h3 class="card-title" title="Main Header">Documentation</h3>
+        <div class="content">
+            <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+            <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+        </div>
+        <footer data-status="active-visible">Status: Active</footer>
+    </article>
+    -->
+
+    <h1>2.5 Attribute Selectors</h1>
+
+    <!-- 2.5.1 [attr] - Has attribute -->
+    <section id="topic-2-5-1">
+        <h2>2.5.1 [attr] - Has attribute</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <!-- Canonical Structure -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <!-- Standard link with target attribute -->
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- Canonical Structure -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <!-- This link has the 'target' attribute, so it gets styled -->
+                        <!--                                              ↓↓↓↓↓↓ THIS ATTRIBUTE matches the [target] selector -->
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.2 [attr="value"] - Exact match -->
+    <section id="topic-2-5-2">
+        <h2>2.5.2 [attr="value"] - Exact match</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <!-- Matches exactly target="_blank" -->
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.3 [attr~="value"] - Contains word -->
+    <section id="topic-2-5-3">
+        <h2>2.5.3 [attr~="value"] - Contains word (space-separated)</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- 'featured' is one of the space-separated words in data-tags -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.4 [attr|="value"] - Starts with value (hyphen-separated) -->
+    <section id="topic-2-5-4">
+        <h2>2.5.4 [attr|="value"] - Starts with value (hyphenated)</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- Matches 'en' in 'en-US' (perfect for lang attributes) -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.5 [attr^="value"] - Begins with -->
+    <section id="topic-2-5-5">
+        <h2>2.5.5 [attr^="value"] - Begins with</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- Matches href starting with 'https' -> Secure Link -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.6 [attr$="value"] - Ends with -->
+    <section id="topic-2-5-6">
+        <h2>2.5.6 [attr$="value"] - Ends with</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- Matches href ending with '.jpg' -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.7 *[attr*="value"] - Contains substring -->
+    <section id="topic-2-5-7">
+        <h2>2.5.7 [attr*="value"] - Contains substring</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- Matches 'active' substring inside 'active-visible' -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5.8 [attr="value" i] - Case-insensitive -->
+    <section id="topic-2-5-8">
+        <h2>2.5.8 [attr="value" i] - Case-insensitive</h2>
+        <div class="panel-container">
+            <div class="panel without-logic">
+                <h3>WITHOUT LOGIC</h3>
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+            <div class="panel with-logic">
+                <h3>WITH LOGIC</h3>
+                <!-- Targeted with lowercase 'main header' even though HTML is Title Case -->
+                <article class="card" lang="en-US" data-tags="featured secure-item">
+                    <h3 class="card-title" title="Main Header">Documentation</h3>
+                    <div class="content">
+                        <a href="https://secure.example.com/manual.pdf" class="link primary" target="_blank">Download PDF</a>
+                        <a href="http://demo-site.org/preview.jpg" class="link secondary">View Image</a>
+                    </div>
+                    <footer data-status="active-visible">Status: Active</footer>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
